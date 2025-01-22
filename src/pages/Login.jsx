@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Input, Button, Card, Alert, Select } from 'antd';
-import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 
 const { Option } = Select;
 
 const Login = () => {
   const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [role, setRole] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -15,8 +15,18 @@ const Login = () => {
 
   const handleSubmit = async (values) => {
     try {
-      login(values.username, values.password, values.role);
-      navigate('/');
+      const success = await login(values.username, values.password, values.role);
+      if (success) {
+        if (values.role === 'admin') {
+          navigate('/patients');
+        } else if (values.role === 'doctor') {
+          navigate('/team');
+        } else {
+          setError(true);
+        }
+      } else {
+        setError(true);
+      }
     } catch (error) {
       setError(true);
     }

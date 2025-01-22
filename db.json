@@ -2,19 +2,17 @@
   "users": [
     {
       "id": 1,
-      "name": "fernanda",
-      "username": "fernanda",
-      "password": "12345",
-      "role": "admin",
-      "token": "ABC12345"
+      "name": "admin",
+      "username": "admin",
+      "password": "asd123123",
+      "role": "admin"
     },
     {
-      "id": 2,
+      "id": 18,
       "name": "juan",
       "username": "juan",
       "password": "54321",
-      "role": "doctor",
-      "token": "XYZ54321"
+      "role": "doctor"
     }
   ],
   "patients": [

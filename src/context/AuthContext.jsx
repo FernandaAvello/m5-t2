@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { encryptData } from '../utils/encryption';
 
 const AuthContext = createContext();
 
@@ -12,16 +13,18 @@ export const AuthProvider = ({ children }) => {
       .then(data => setUsers(data.users))
       .catch(error => console.error('Error fetching users:', error));
   }, []);
-
-  const login = (username, password, role) => {
+  const login = async (username, password, role) => {
     const foundUser = users.find(
       user => user.username === username && user.password === password && user.role === role
     );
     if (foundUser) {
-      setUser({ username, role, token: foundUser.token });
-      localStorage.setItem('user', JSON.stringify({ username, role, token: foundUser.token }));
+      const encryptedUser = encryptData(foundUser);
+      setUser({ username, role, token: encryptedUser });
+      localStorage.setItem('user', JSON.stringify({ username, role, token: encryptedUser }));
+      return true;
     } else {
       console.error('Invalid credentials');
+      return false;
     }
   };
 

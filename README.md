@@ -1,6 +1,6 @@
 # Aplicación de Gestión de Roles
 
-Esta es una aplicación de gestión de roles que permite a los usuarios con diferentes roles (doctor y administrador) acceder a diferentes secciones de la aplicación. La aplicación está protegida contra varias amenazas de seguridad como clickjacking, XSS, inyección SQL y ataques DoS.
+Esta es una aplicación de gestión de roles que permite a los usuarios con diferentes roles (doctor y administrador) acceder a diferentes secciones de la aplicación. La aplicación está protegida contra varias amenazas de seguridad como clickjacking, XSS.
 
 ## Características
 
@@ -11,6 +11,14 @@ Esta es una aplicación de gestión de roles que permite a los usuarios con dife
 ## Base de Datos Simulada
 
 El archivo `db.json` se utiliza como una base de datos simulada para almacenar la información de los usuarios. Este archivo contiene una lista de usuarios con sus respectivos nombres de usuario, contraseñas y roles. La aplicación utiliza este archivo para autenticar a los usuarios durante el inicio de sesión.
+
+## Vulnerabilidades Simuladas
+
+Página con acceso a ruta `/vulnerabilities` dedicada a demostrar vulnerabilidades como XSS y Clickjacking, junto con sus mitigaciones.
+
+1. XSS (Cross-Site Scripting): Evitado mediante sanitización de entradas con funciones auxiliares (sanitizeInput).
+
+2. Clickjacking: Mitigado con encabezados HTTP (X-Frame-Options y Content-Security-Policy).
 
 ### Credenciales de Acceso
 

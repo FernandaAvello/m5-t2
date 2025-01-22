@@ -32,7 +32,6 @@ Sigue estos pasos para ejecutar la aplicación en tu entorno local:
 
     ```sh
     git clone https://github.com/FernandaAvello/m5-t2.git
-cd tu-repositorio
     cd m5-t2/
     ```
 

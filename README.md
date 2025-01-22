@@ -31,7 +31,8 @@ Sigue estos pasos para ejecutar la aplicación en tu entorno local:
 1. Clona el repositorio:
 
     ```sh
-    git clone https://github.com/tu-usuario/tu-repositorio.git
+    git clone https://github.com/FernandaAvello/m5-t2.git
+cd tu-repositorio
     cd tu-repositorio
     ```
 

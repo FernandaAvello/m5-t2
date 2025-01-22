@@ -9,6 +9,7 @@ import Appointment from "../pages/Appointment";
 import Patients from "../pages/Patients";
 import Login from "../pages/Login";
 import AccessDenied from "../pages/AccessDenied";
+import Vulnerabilities from "../pages/Vulnerabilities";
 import PrivateRoute from './PrivateRoute';
 
 const AppRoutes = () => {
@@ -20,6 +21,7 @@ const AppRoutes = () => {
       {!isLoginPage && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/vulnerabilities" element={<Vulnerabilities />} />
         <Route path="/login" element={<Login />} />
         <Route path="/access-denied" element={<AccessDenied />} />
         <Route element={<PrivateRoute allowedRoles={['doctor']} />}>

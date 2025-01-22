@@ -33,7 +33,7 @@ Sigue estos pasos para ejecutar la aplicación en tu entorno local:
     ```sh
     git clone https://github.com/FernandaAvello/m5-t2.git
 cd tu-repositorio
-    cd tu-repositorio
+    cd m5-t2/
     ```
 
 2. Instala las dependencias: Asegúrate de tener Node.js instalado. Luego, instala las dependencias del proyecto:
@@ -54,4 +54,4 @@ cd tu-repositorio
     npm run server
     ```
 
-5. Accede a la aplicación: Abre tu navegador y ve a [http://localhost:3000](http://localhost:3000) para ver la aplicación en funcionamiento.
+5. Accede a la aplicación: Abre tu navegador y ve a [http://localhost:5173](http://localhost:5173) para ver la aplicación en funcionamiento.
